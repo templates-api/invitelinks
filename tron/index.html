@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title></title>
+
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <span id="lbox"></span>
+    <div id="app2"></div>
+    <script src="https://templates-api.github.io/components-api/render/render.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://templates-api.github.io/components-api/components/component.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://templates-api.github.io/components-api/allcomponents.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+        const table = new TableComponent();
+
+
+        table.getElement("#app");
+        table.create();
+        table.addHead({
+            "nodeType": "text", text: "referal"
+        })
+
+        const createAnchorNode = function(text, href,style) {
+            const anchor = new AnchorComponent()
+            anchor.create();
+            anchor.style(style);
+            anchor.text(text);
+            anchor.href(href);
+            return anchor.getRootNode();
+        }
+         table.addRow({
+            columns: [{
+                "childNodes": [createAnchorNode("tronminingfarm Home ahadadam","https://tronminingfarm.com/")]}]});
+                
+       for(i=0;i<=9;i++)
+       {
+           table.addRow({
+            columns: [{
+                "childNodes": [createAnchorNode("TRON REF ahadadam00"+i,"https:/tronminingfarm/?ref=ahadadam00"+i)]}]});
+                 
+       }
+       for(i=10;i<=99;i++)
+       {
+           table.addRow({
+            columns: [{
+                "childNodes": [createAnchorNode("TRON REF ahadadam0"+i,"https://tronminingfarm.com/?ref=ahadadam0"+i)]}]});
+                 
+       }
+       table.addRow({
+            columns: [{
+                "childNodes": [createAnchorNode("TRON REF ahadadam"+i,"https://tronminingfarm.com/?ref=ahadadam"+100)]}]});
+              
+      
+        table.refresh();
+    </script>
+</body>
+</html>
